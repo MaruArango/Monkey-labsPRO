@@ -36,7 +36,7 @@ def get_spark_results(url_results):
 
 
 
-st.title("Spark & streamlit")
+st.title("Maritza Arango A00839440 SEMANA TEC RETO")
 
 st.header("spark-submit Job")
 
