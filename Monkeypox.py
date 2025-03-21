@@ -28,14 +28,15 @@ if __name__ == "__main__":
     df_tweets_en = spark.sql(query)
     df_tweets_en.show(20)
 
-    # Filtrar los tweets de una fecha específica, por ejemplo, tweets del 2023
-    query = """SELECT id, text, date, time FROM tweets WHERE date BETWEEN '2023-01-01' AND '2023-12-31' ORDER BY date"""
-    df_tweets_2023 = spark.sql(query)
-    df_tweets_2023.show(20)
+   # Filtrar los tweets del 19 de agosto de 2022
+    query = """SELECT id, text, date, time FROM tweets WHERE date = '2022-08-19' ORDER BY time"""
+    df_tweets_19_aug_2022 = spark.sql(query)
+    df_tweets_19_aug_2022.show(20)
+
 
     # Guardar los tweets filtrados en un archivo JSON
-    results = df_tweets_2023.toJSON().collect()
-    with open('results/monkeypox_tweets_2023.json', 'w') as file:
+    results = df_tweets_19_aug_2022.toJSON().collect()
+    with open('results/monkeypox_tweets_2022.json', 'w') as file:
         json.dump(results, file)
 
     # Consultar el número de respuestas, retweets y likes por tweet
