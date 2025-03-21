@@ -40,7 +40,10 @@ jobs:
         hadoop-version: '3'
 
     - run: spark-submit --version
-    - run: spark-submit --master local hello-spark.py
+    #- run: spark-submit --master local hello-spark.py
+    - run: wget -O dataset.csv https://raw.githubusercontent.com/MaruArango/Monkey-labsPRO/refs/heads/master/mpox-08-19-2022.csv  
+    - run: ls -la
+
     - run: ls -la  
     - name: GIT commit and push docs
       env: 
