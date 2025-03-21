@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     print("read dataset.csv ... ")
     # Ruta del dataset de tweets
-    path_tweets = "monkeypox_tweets.csv"
+    path_tweets = "mpox-08-19-2022.csv"
     df_tweets = spark.read.csv(path_tweets, header=True, inferSchema=True)
     
     # Renombramos algunas columnas si es necesario, por ejemplo, "tweet" a "text"
